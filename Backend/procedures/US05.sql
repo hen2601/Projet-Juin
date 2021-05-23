@@ -1,8 +1,7 @@
-ALTER PROCEDURE "DBA"."US05"(in resul VARCHAR(20), in test DATE, in exp DATE)
+create PROCEDURE "DBA"."US05"(in idT INTEGER, in dateT DATE, in expi DATE, in resul INTEGER)
 BEGIN
-    SELECT Id, prenom, nom
-    FROM tbpersonnes;
-    UPDATE tbTests
-    SET resultat = resul, dateTest = test, expiration = exp, tbTests.Id = tbPersonnes.Id
-    WHERE Id IS NULL;
+	INSERT INTO  tbTest
+        (idTest, dateTest , expiration , resultatTest)
+        VALUES 
+        (idT ,dateT ,expi ,resul)
 END
